@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Butikowa platforma rekrutacyjna — oferty pracy, kreator CV i profil zawodowy." />
+  <title>Atelier Talent — Boutique Recruitment</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<header class="nav">
+  <a class="brand" href="#start">ATELIER TALENT<span>BOUTIQUE RECRUITMENT</span></a>
+  <button class="menu" aria-label="Otwórz menu">☰</button>
+  <nav class="links">
+    <a href="#oferty">Oferty</a><a href="#cv">Kreator CV</a><a href="#profil">Profil zawodowy</a><a href="#onas">O nas</a><a href="#firmy">Dla firm</a><a class="button small" href="#panel">Panel demo</a>
+  </nav>
+</header>
+
+<main>
+<section id="start" class="hero shell">
+  <div>
+    <p class="eyebrow">Butikowa firma rekrutacyjna</p>
+    <h1>Talent zasługuje na <em>właściwe miejsce.</em></h1>
+    <p class="lead">Łączymy wyjątkowych ludzi z organizacjami, w których mogą naprawdę rozwinąć swój potencjał. Dyskretnie, uważnie i bez schematów.</p>
+    <div class="actions"><a class="button" href="#oferty">Zobacz aktualne oferty</a><a class="button ghost" href="#cv">Stwórz profesjonalne CV</a></div>
+    <div class="proof"><span><b>01</b> Indywidualne podejście</span><span><b>02</b> Dyskretne procesy</span><span><b>03</b> Jakość ponad liczbę</span></div>
+  </div>
+  <div class="hero-art"><div class="portrait">SELECTED<br>TALENT</div><span>01</span></div>
+</section>
+
+<section class="section muted-bg">
+  <div class="shell"><p class="eyebrow">Nasze podejście</p><div class="section-head"><h2>Rekrutacja w jakości premium</h2><p>Technologia porządkuje proces, ale człowiek zawsze pozostaje w centrum. Każdy kandydat i każda organizacja otrzymują uwagę, na którą zasługują.</p></div>
+  <div class="cards three"><article class="card"><i>✦</i><h3>Precyzyjne dopasowanie</h3><p>Analizujemy doświadczenie, potencjał, styl pracy i prawdziwe potrzeby obu stron.</p></article><article class="card"><i>◌</i><h3>Partnerska relacja</h3><p>Kandydat wie, na jakim etapie jest proces i może liczyć na bezpośredni kontakt.</p></article><article class="card"><i>◇</i><h3>Poufność i dyskrecja</h3><p>Wrażliwe procesy prowadzimy z najwyższą starannością i ochroną informacji.</p></article></div></div>
+</section>
+
+<section id="oferty" class="section shell">
+  <p class="eyebrow">Aktualne rekrutacje</p><div class="section-head"><h2>Wybrane oferty pracy</h2><p>Przeglądaj aktualne procesy lub zostaw CV w bazie talentów.</p></div>
+  <div class="filters"><input id="search" placeholder="Stanowisko lub lokalizacja"><select id="mode"><option value="">Każdy tryb pracy</option><option>Hybrydowo</option><option>Zdalnie</option><option>Stacjonarnie</option></select></div>
+  <div id="jobs" class="jobs"></div>
+</section>
+
+<section id="cv" class="section dark"><div class="shell split"><div><p class="eyebrow gold">Kreator CV</p><h2>Twoje doświadczenie. Opowiedziane lepiej.</h2><p class="lead light">Uzupełnij prosty formularz, wybierz elegancki układ i przygotuj CV gotowe do aplikowania.</p><ul class="checks"><li>czytelna struktura i profesjonalny wygląd</li><li>podpowiedzi do podsumowania zawodowego</li><li>możliwość użycia CV przy aplikacji</li></ul></div>
+<form id="cvForm" class="form-card"><p class="eyebrow">Krok demonstracyjny</p><h3>Podstawowe informacje</h3><input required name="name" placeholder="Imię i nazwisko"><input required type="email" name="email" placeholder="E-mail"><input name="role" placeholder="Stanowisko / specjalizacja"><textarea name="summary" rows="5" placeholder="Podsumowanie zawodowe"></textarea><button class="button" type="submit">Wygeneruj podgląd CV</button><p id="cvMessage" class="success"></p></form></div></section>
+
+<section id="profil" class="section muted-bg"><div class="shell split reverse"><div class="profile-art"><div class="rings"><span>ANALIZA</span></div></div><div><p class="eyebrow">Profil zawodowo-osobowościowy</p><h2>Poznaj swój naturalny styl pracy</h2><p class="lead">Krótki profil rozwojowy opisujący komunikację, samodzielność, sposób podejmowania decyzji i preferowane środowisko pracy.</p><button id="testBtn" class="button">Rozpocznij test demo</button><div id="testResult" class="result hidden"></div></div></div></section>
+
+<section id="onas" class="section shell"><p class="eyebrow">O nas</p><div class="section-head"><h2>Butikowe podejście do ludzi i biznesu</h2><p>To miejsce na historię firmy, sylwetki założycielek, specjalizacje, misję i wartości. Wszystkie treści są przykładowe i łatwe do późniejszej podmiany.</p></div><div class="cards two"><article class="card founder"><div class="avatar">R</div><div><h3>Romana</h3><p>Partnerka zarządzająca — miejsce na biogram, doświadczenie i specjalizacje.</p></div></article><article class="card founder"><div class="avatar">A</div><div><h3>Ania</h3><p>Partnerka zarządzająca — miejsce na biogram, doświadczenie i specjalizacje.</p></div></article></div></section>
+
+<section id="firmy" class="section accent"><div class="shell split"><div><p class="eyebrow gold">Dla organizacji</p><h2>Rekrutacja, która chroni czas i reputację firmy</h2><p class="lead light">Executive search, rekrutacje specjalistyczne, mapowanie rynku i wsparcie w ocenie kandydatów.</p></div><form id="companyForm" class="form-card"><h3>Opowiedz o roli</h3><input required placeholder="Imię i nazwisko"><input required placeholder="Firma"><input required type="email" placeholder="E-mail"><textarea rows="4" placeholder="Jakiego stanowiska dotyczy rozmowa?"></textarea><button class="button" type="submit">Wyślij zapytanie</button><p class="success"></p></form></div></section>
+
+<section id="panel" class="section panel-section"><div class="shell"><p class="eyebrow">Panel rekruterek — demonstracja</p><div class="section-head"><h2>Wszystkie procesy w jednym miejscu</h2><p>Widok pokazuje docelowy sposób zarządzania aplikacjami. Po podłączeniu Supabase dane będą zapisywane na żywo.</p></div><div class="stats"><div><b>24</b><span>nowe aplikacje</span></div><div><b>8</b><span>aktywne oferty</span></div><div><b>11</b><span>rozmów w tym tygodniu</span></div><div><b>4</b><span>kandydatów u klientów</span></div></div><div class="kanban"><div class="column"><h4>Nowe</h4><article>Anna Kowalska<small>Head of People</small></article><article>Piotr Nowak<small>Financial Controller</small></article></div><div class="column"><h4>Analiza</h4><article>Maria Zielińska<small>Operations Manager</small></article></div><div class="column"><h4>Rozmowa</h4><article>Jan Maj<small>Key Account Manager</small></article></div><div class="column"><h4>U klienta</h4><article>Karolina Lis<small>Head of People</small></article></div></div></div></section>
+</main>
+
+<div id="jobModal" class="modal hidden"><div class="modal-box"><button class="close" aria-label="Zamknij">×</button><p class="eyebrow">Oferta pracy</p><h2 id="modalTitle"></h2><div id="modalMeta" class="tags"></div><p id="modalSummary" class="lead"></p><h3>Aplikuj na stanowisko</h3><form id="applicationForm"><input required placeholder="Imię i nazwisko"><input required type="email" placeholder="E-mail"><input required placeholder="Telefon"><input type="file" accept=".pdf,.doc,.docx"><label><input required type="checkbox"> Zgadzam się na przetwarzanie danych w tym procesie.</label><button class="button" type="submit">Wyślij aplikację</button><p class="success"></p></form></div></div>
+
+<footer><div class="shell footer-grid"><div class="brand light-brand">ATELIER TALENT<span>BOUTIQUE RECRUITMENT</span></div><div><b>Nawigacja</b><a href="#oferty">Oferty</a><a href="#cv">Kreator CV</a><a href="#onas">O nas</a></div><div><b>Kontakt</b><p>hello@twojafirma.pl<br>+48 000 000 000<br>Poznań, Polska</p></div></div></footer>
+<script src="app.js"></script>
+</body>
+</html>
