@@ -1,0 +1,18 @@
+const jobs=[
+{title:'Head of People & Culture',location:'Poznań',mode:'Hybrydowo',contract:'Umowa o pracę',salary:'20 000–26 000 PLN',summary:'Strategiczna rola HR w organizacji w fazie skalowania.'},
+{title:'Senior Financial Controller',location:'Warszawa',mode:'Hybrydowo',contract:'Umowa o pracę',salary:'16 000–20 000 PLN',summary:'Odpowiedzialność za controlling zarządczy i rozwój raportowania.'},
+{title:'Operations Manager',location:'Wrocław',mode:'Stacjonarnie',contract:'B2B / UoP',salary:'Wynagrodzenie poufne',summary:'Budowa sprawnych procesów operacyjnych w firmie premium.'},
+{title:'Key Account Manager',location:'Polska',mode:'Zdalnie',contract:'B2B',salary:'14 000–18 000 PLN',summary:'Rozwój relacji z kluczowymi klientami na rynku B2B.'}
+];
+const jobsEl=document.querySelector('#jobs');
+const modal=document.querySelector('#jobModal');
+function renderJobs(){const q=document.querySelector('#search').value.toLowerCase();const mode=document.querySelector('#mode').value;jobsEl.innerHTML='';jobs.filter(j=>(!q||`${j.title} ${j.location}`.toLowerCase().includes(q))&&(!mode||j.mode===mode)).forEach((j,i)=>{const el=document.createElement('article');el.className='job';el.innerHTML=`<div><h3>${j.title}</h3><p>${j.summary}</p><div class="tags"><span class="tag">${j.location}</span><span class="tag">${j.mode}</span><span class="tag">${j.contract}</span><span class="tag">${j.salary}</span></div></div><button class="button small">Zobacz ofertę</button>`;el.addEventListener('click',()=>openJob(i));jobsEl.appendChild(el)});}
+function openJob(i){const j=jobs[i];document.querySelector('#modalTitle').textContent=j.title;document.querySelector('#modalSummary').textContent=j.summary+' To miejsce na pełny opis stanowiska, wymagania, zakres odpowiedzialności i ofertę klienta.';document.querySelector('#modalMeta').innerHTML=[j.location,j.mode,j.contract,j.salary].map(x=>`<span class="tag">${x}</span>`).join('');modal.classList.remove('hidden');}
+document.querySelector('#search').addEventListener('input',renderJobs);document.querySelector('#mode').addEventListener('change',renderJobs);document.querySelector('.close').addEventListener('click',()=>modal.classList.add('hidden'));modal.addEventListener('click',e=>{if(e.target===modal)modal.classList.add('hidden')});
+document.querySelector('.menu').addEventListener('click',()=>document.querySelector('.links').classList.toggle('open'));
+document.querySelectorAll('.links a').forEach(a=>a.addEventListener('click',()=>document.querySelector('.links').classList.remove('open')));
+document.querySelector('#cvForm').addEventListener('submit',e=>{e.preventDefault();const data=new FormData(e.target);document.querySelector('#cvMessage').textContent=`Podgląd CV dla ${data.get('name')} został przygotowany. W wersji produkcyjnej będzie można pobrać PDF i zapisać go na koncie.`});
+document.querySelector('#companyForm').addEventListener('submit',e=>{e.preventDefault();e.target.querySelector('.success').textContent='Dziękujemy. Zapytanie demonstracyjne zostało zapisane.'});
+document.querySelector('#applicationForm').addEventListener('submit',e=>{e.preventDefault();e.target.querySelector('.success').textContent='Aplikacja demonstracyjna została przyjęta. Po podłączeniu Supabase trafi do panelu rekruterek.'});
+document.querySelector('#testBtn').addEventListener('click',()=>{const el=document.querySelector('#testResult');el.classList.remove('hidden');el.innerHTML='<b>Przykładowy wynik</b><p>Twój profil wskazuje na wysoką samodzielność, bezpośrednią komunikację i preferencję środowiska, w którym cele są jasno określone, ale sposób ich realizacji pozostaje elastyczny.</p>'});
+renderJobs();
